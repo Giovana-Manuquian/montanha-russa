@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAGIC PARK</title>
+    <style>
+        body {
+            color: black;
+            font: 14pt Arial;
+            background: rgba(89, 136, 223, 0.884);
+        } 
+        input {
+            font: 12pt Arial;
+        }
+        h1 {
+            color: rgb(238, 238, 15);
+        }
+    </style>
+</head>
+<body>
+    <h1>MAGIC PARK</h1>
+    <p>Bem-vindo(a) ao Roller Coaster Dreams!</p>
+    <p>Para saber se você é capaz de enfrentar esse desafio, nos responda duas perguntas, por favor?</p>
+    Qual é sua idade: <input type="number" name="txtdado1" id="txtdado1"> 
+    Qual é sua altura: <input type="number" name="txtdado2" id="txtdado2">
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res">
+
+    </div>
+    <script>
+        function calcular() {
+            var txtdad = window.document.querySelector('input#txtdado1')
+            var txtdad2 = window.document.querySelector('input#txtdado2')
+            var res = window.document.querySelector('div#res')
+            var dado1 = Number(txtdad.value)
+            var dado2 = Number(txtdad2.value)
+            res.innerHTML = `<p>Sua idade atual é de ${dado1} anos e sua altura atual é de ${dado2}.</p>`
+            if (dado1 > 8) {
+                res.innerHTML += `<p>Desafio aceito!</p>`
+            } else {
+                res.innerHTML += `<p>Que pena!</p>`
+            }
+            if (dado2 > 1.40) {
+                res.innerHTML += `<p>Agora é só ir curtir essa aventura!</p>`
+            } else {
+                res.innerHTML += `<p>Você ainda não está preparado(a) para essa aventura.</p>`
+            }
+        }   
+    </script>
+</body>
+</html>
